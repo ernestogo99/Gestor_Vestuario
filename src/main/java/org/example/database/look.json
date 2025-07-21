@@ -1,0 +1,39 @@
+[
+  {
+    "id": "9123ce9f-1690-4c88-b0d1-74841ceaad48",
+    "parteDecima": {
+      "quantidadeDeLavagens": 0,
+      "estaEmprestado": false,
+      "id": "608f3408-3ebc-4221-a0d5-be50429e5e14",
+      "cor": "marrom",
+      "tamanho": "20cm",
+      "lojaDeOrigem": "riachuelo",
+      "conservacao": "REGULAR",
+      "numeroDeUsos": 0,
+      "tipo": "Camisa"
+    },
+    "parteDebaixo": {
+      "quantidadeDeLavagens": 0,
+      "estaEmprestado": false,
+      "id": "a1c32d3b-a765-4fbb-af96-a1144f706fb9",
+      "cor": "white",
+      "tamanho": "40cm",
+      "lojaDeOrigem": "zara",
+      "conservacao": "EXCELENTE",
+      "numeroDeUsos": 0,
+      "tipo": "Calca"
+    },
+    "parteIntima": {
+      "quantidadeDeLavagens": 0,
+      "id": "fca671f7-5230-436d-a123-dd5e419b5540",
+      "cor": "blue",
+      "tamanho": "20cm",
+      "lojaDeOrigem": "ck",
+      "conservacao": "EXCELENTE",
+      "numeroDeUsos": 0,
+      "tipo": "Cueca"
+    },
+    "acessorios": [],
+    "numeroDeUsos": 0
+  }
+]
