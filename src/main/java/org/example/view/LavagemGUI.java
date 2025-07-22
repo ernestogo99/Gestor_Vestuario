@@ -8,6 +8,8 @@ import org.example.model.Lavagem;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.List;
 
 public class LavagemGUI {
@@ -61,8 +63,8 @@ public class LavagemGUI {
     private void adicionarBotao(String texto,  Runnable acao) {
         JButton botao = new JButton(texto);
         botao.setFont(new Font("Arial", Font.PLAIN, 16));
-        botao.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent e) {
+        botao.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
                 try {
                     acao.run();
                 } catch (Exception ex) {
@@ -172,7 +174,7 @@ public class LavagemGUI {
                     super.getListCellRendererComponent(list, value, index, isSelected, cellHasFocus);
                     if (value instanceof Item) {
                         Item item = (Item) value;
-                        setText("ID: " + item.getId() + " | Cor: " + item.getCor() + " | Tamanho: " + item.getTamanho());
+                        setText("Tipo: " + item.getClass().getSimpleName() + " | Cor: " + item.getCor() + " | Tamanho: " + item.getTamanho());
                     }
                     return this;
                 }
@@ -213,38 +215,46 @@ public class LavagemGUI {
             String idLavagem = JOptionPane.showInputDialog(frame, "ID da lavagem:");
             if (idLavagem == null || idLavagem.trim().isEmpty()) return;
 
-            Lavagem lavagem=this.controller.obterPorId(idLavagem);
-            List<ILavavel> itensNaLavagem =lavagem.getItems();
+            Lavagem lavagem = this.controller.obterPorId(idLavagem);
+            List<ILavavel> itensNaLavagem = lavagem.getItems();
+
             if (itensNaLavagem == null || itensNaLavagem.isEmpty()) {
                 JOptionPane.showMessageDialog(frame, "Nenhum item encontrado nesta lavagem.");
                 return;
             }
 
 
-            String[] opcoes = new String[itensNaLavagem.size()];
-            for (int i = 0; i < itensNaLavagem.size(); i++) {
-                ILavavel item = itensNaLavagem.get(i);
-                if(item instanceof Item item1 )
-                opcoes[i] = item1.getId() + " - " + item.getClass().getSimpleName();
+            DefaultComboBoxModel<ILavavel> model = new DefaultComboBoxModel<>();
+            for (ILavavel item : itensNaLavagem) {
+                model.addElement(item);
             }
 
-            String escolha = (String) JOptionPane.showInputDialog(
-                    frame,
-                    "Selecione o item a remover da lavagem:",
-                    "Remover Item",
-                    JOptionPane.PLAIN_MESSAGE,
-                    null,
-                    opcoes,
-                    opcoes[0]
-            );
+            JComboBox<ILavavel> comboBox = new JComboBox<>(model);
+            comboBox.setRenderer(new DefaultListCellRenderer() {
+                @Override
+                public Component getListCellRendererComponent(JList<?> list, Object value, int index,
+                                                              boolean isSelected, boolean cellHasFocus) {
+                    super.getListCellRendererComponent(list, value, index, isSelected, cellHasFocus);
+                    if (value instanceof Item item) {
+                        setText(item.getClass().getSimpleName() + " - " + item.getCor());
+                    } else {
+                        setText(value.getClass().getSimpleName());
+                    }
+                    return this;
+                }
+            });
 
-            if (escolha == null) return;
+            int result = JOptionPane.showConfirmDialog(frame, comboBox, "Selecione o item a remover da lavagem", JOptionPane.OK_CANCEL_OPTION);
+            if (result != JOptionPane.OK_OPTION) return;
 
+            ILavavel selecionado = (ILavavel) comboBox.getSelectedItem();
+            if (selecionado instanceof Item item) {
+                controller.removerItemDaLavagem(idLavagem, item.getId());
+                JOptionPane.showMessageDialog(frame, "Item removido da lavagem com sucesso!");
+            } else {
+                JOptionPane.showMessageDialog(frame, "Item inválido ou não removível.");
+            }
 
-            String idItem = escolha.split(" - ")[0];
-
-            controller.removerItemDaLavagem(idLavagem, idItem);
-            JOptionPane.showMessageDialog(frame, "Item removido da lavagem com sucesso!");
         } catch (Exception ex) {
             JOptionPane.showMessageDialog(frame, "Erro ao remover item: " + ex.getMessage(), "Erro", JOptionPane.ERROR_MESSAGE);
         }

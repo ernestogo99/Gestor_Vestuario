@@ -4,6 +4,7 @@ import org.example.controller.ItemController;
 import org.example.enums.Conservacao;
 import org.example.model.Item;
 
+import java.awt.event.ActionListener;
 import java.util.List;
 import javax.swing.*;
 import java.awt.*;
@@ -110,7 +111,7 @@ public class ItemGUI {
     private void adicionarBotao(String texto,  Runnable acao) {
         JButton botao = new JButton(texto);
         botao.setFont(new Font("Arial", Font.PLAIN, 16));
-        botao.addActionListener(new java.awt.event.ActionListener() {
+        botao.addActionListener(new ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent e) {
                 try {
                     acao.run();

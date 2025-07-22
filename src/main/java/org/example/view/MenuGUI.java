@@ -76,6 +76,15 @@
 
             frame.add(panel);
 
+            btnLooks.addActionListener(new ActionListener() {
+                @Override
+                public void actionPerformed(ActionEvent e) {
+                    LookGUI lookGUI=new LookGUI();
+                    lookGUI.show();
+                    frame.dispose();
+                }
+            });
+
         }
 
         public void show(){

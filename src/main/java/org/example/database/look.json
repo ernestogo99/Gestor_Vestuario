@@ -1,14 +1,14 @@
 [
   {
-    "id": "9123ce9f-1690-4c88-b0d1-74841ceaad48",
+    "id": "c981fecd-9861-46a9-aaba-ae963236e19a",
     "parteDecima": {
       "quantidadeDeLavagens": 0,
       "estaEmprestado": false,
-      "id": "608f3408-3ebc-4221-a0d5-be50429e5e14",
-      "cor": "marrom",
+      "id": "475e61ab-5d60-4cde-82d5-0e90e905e8a0",
+      "cor": "black",
       "tamanho": "20cm",
-      "lojaDeOrigem": "riachuelo",
-      "conservacao": "REGULAR",
+      "lojaDeOrigem": "ck",
+      "conservacao": "EXCELENTE",
       "numeroDeUsos": 0,
       "tipo": "Camisa"
     },
@@ -31,6 +31,265 @@
       "lojaDeOrigem": "ck",
       "conservacao": "EXCELENTE",
       "numeroDeUsos": 0,
+      "tipo": "Cueca"
+    },
+    "acessorios": [],
+    "numeroDeUsos": 0
+  },
+  {
+    "id": "9123ce9f-1690-4c88-b0d1-74841ceaad48",
+    "parteDecima": {
+      "quantidadeDeLavagens": 0,
+      "estaEmprestado": false,
+      "id": "608f3408-3ebc-4221-a0d5-be50429e5e14",
+      "cor": "marrom",
+      "tamanho": "20cm",
+      "lojaDeOrigem": "riachuelo",
+      "conservacao": "REGULAR",
+      "numeroDeUsos": 1,
+      "tipo": "Camisa"
+    },
+    "parteDebaixo": {
+      "quantidadeDeLavagens": 0,
+      "estaEmprestado": false,
+      "id": "a1c32d3b-a765-4fbb-af96-a1144f706fb9",
+      "cor": "white",
+      "tamanho": "40cm",
+      "lojaDeOrigem": "zara",
+      "conservacao": "EXCELENTE",
+      "numeroDeUsos": 1,
+      "tipo": "Calca"
+    },
+    "parteIntima": {
+      "quantidadeDeLavagens": 0,
+      "id": "fca671f7-5230-436d-a123-dd5e419b5540",
+      "cor": "blue",
+      "tamanho": "20cm",
+      "lojaDeOrigem": "ck",
+      "conservacao": "EXCELENTE",
+      "numeroDeUsos": 1,
+      "tipo": "Cueca"
+    },
+    "acessorios": [],
+    "numeroDeUsos": 1
+  },
+  {
+    "id": "191eb54b-0a45-41d8-8eed-92e47519d1b0",
+    "parteDecima": {
+      "quantidadeDeLavagens": 0,
+      "estaEmprestado": false,
+      "id": "1a1a925d-021c-4a72-9f24-03aa0d1e6ce1",
+      "cor": "amarelo",
+      "tamanho": "100cm",
+      "lojaDeOrigem": "calvin klein",
+      "conservacao": "EXCELENTE",
+      "numeroDeUsos": 0,
+      "tipo": "Camisa"
+    },
+    "parteDebaixo": {
+      "quantidadeDeLavagens": 0,
+      "estaEmprestado": false,
+      "id": "a1c32d3b-a765-4fbb-af96-a1144f706fb9",
+      "cor": "white",
+      "tamanho": "40cm",
+      "lojaDeOrigem": "zara",
+      "conservacao": "EXCELENTE",
+      "numeroDeUsos": 1,
+      "tipo": "Calca"
+    },
+    "parteIntima": {
+      "quantidadeDeLavagens": 0,
+      "id": "fca671f7-5230-436d-a123-dd5e419b5540",
+      "cor": "blue",
+      "tamanho": "20cm",
+      "lojaDeOrigem": "ck",
+      "conservacao": "EXCELENTE",
+      "numeroDeUsos": 1,
+      "tipo": "Cueca"
+    },
+    "acessorios": [],
+    "numeroDeUsos": 0
+  },
+  {
+    "id": "3d1374ad-5069-4d17-aac5-aeeba459554a",
+    "parteDecima": {
+      "quantidadeDeLavagens": 0,
+      "estaEmprestado": false,
+      "id": "608f3408-3ebc-4221-a0d5-be50429e5e14",
+      "cor": "marrom",
+      "tamanho": "20cm",
+      "lojaDeOrigem": "riachuelo",
+      "conservacao": "REGULAR",
+      "numeroDeUsos": 1,
+      "tipo": "Camisa"
+    },
+    "parteDebaixo": {
+      "quantidadeDeLavagens": 0,
+      "estaEmprestado": false,
+      "id": "a1c32d3b-a765-4fbb-af96-a1144f706fb9",
+      "cor": "white",
+      "tamanho": "40cm",
+      "lojaDeOrigem": "zara",
+      "conservacao": "EXCELENTE",
+      "numeroDeUsos": 1,
+      "tipo": "Calca"
+    },
+    "parteIntima": {
+      "quantidadeDeLavagens": 0,
+      "id": "fca671f7-5230-436d-a123-dd5e419b5540",
+      "cor": "blue",
+      "tamanho": "20cm",
+      "lojaDeOrigem": "ck",
+      "conservacao": "EXCELENTE",
+      "numeroDeUsos": 1,
+      "tipo": "Cueca"
+    },
+    "acessorios": [],
+    "numeroDeUsos": 0
+  },
+  {
+    "id": "291a9022-5ede-4497-ad70-cd79eb56f11e",
+    "parteDecima": {
+      "quantidadeDeLavagens": 0,
+      "estaEmprestado": false,
+      "id": "608f3408-3ebc-4221-a0d5-be50429e5e14",
+      "cor": "marrom",
+      "tamanho": "20cm",
+      "lojaDeOrigem": "riachuelo",
+      "conservacao": "REGULAR",
+      "numeroDeUsos": 1,
+      "tipo": "Camisa"
+    },
+    "parteDebaixo": {
+      "quantidadeDeLavagens": 0,
+      "estaEmprestado": false,
+      "id": "a1c32d3b-a765-4fbb-af96-a1144f706fb9",
+      "cor": "white",
+      "tamanho": "40cm",
+      "lojaDeOrigem": "zara",
+      "conservacao": "EXCELENTE",
+      "numeroDeUsos": 1,
+      "tipo": "Calca"
+    },
+    "parteIntima": {
+      "quantidadeDeLavagens": 0,
+      "id": "fca671f7-5230-436d-a123-dd5e419b5540",
+      "cor": "blue",
+      "tamanho": "20cm",
+      "lojaDeOrigem": "ck",
+      "conservacao": "EXCELENTE",
+      "numeroDeUsos": 1,
+      "tipo": "Cueca"
+    },
+    "acessorios": [],
+    "numeroDeUsos": 0
+  },
+  {
+    "id": "d0c9517e-86bc-469c-9de7-3875be56522e",
+    "parteDecima": {
+      "quantidadeDeLavagens": 0,
+      "estaEmprestado": false,
+      "id": "608f3408-3ebc-4221-a0d5-be50429e5e14",
+      "cor": "marrom",
+      "tamanho": "20cm",
+      "lojaDeOrigem": "riachuelo",
+      "conservacao": "REGULAR",
+      "numeroDeUsos": 1,
+      "tipo": "Camisa"
+    },
+    "parteDebaixo": {
+      "quantidadeDeLavagens": 0,
+      "estaEmprestado": false,
+      "id": "a1c32d3b-a765-4fbb-af96-a1144f706fb9",
+      "cor": "white",
+      "tamanho": "40cm",
+      "lojaDeOrigem": "zara",
+      "conservacao": "EXCELENTE",
+      "numeroDeUsos": 1,
+      "tipo": "Calca"
+    },
+    "parteIntima": {
+      "quantidadeDeLavagens": 0,
+      "id": "2e77ed49-9666-43bb-ad45-132ac6822290",
+      "cor": "branca",
+      "tamanho": "20cm",
+      "lojaDeOrigem": "ck",
+      "conservacao": "EXCELENTE",
+      "numeroDeUsos": 1,
+      "tipo": "Cueca"
+    },
+    "acessorios": [],
+    "numeroDeUsos": 0
+  },
+  {
+    "id": "e3404a7b-d002-4400-8c29-dea7284112f8",
+    "parteDecima": {
+      "quantidadeDeLavagens": 0,
+      "estaEmprestado": false,
+      "id": "475e61ab-5d60-4cde-82d5-0e90e905e8a0",
+      "cor": "black",
+      "tamanho": "20cm",
+      "lojaDeOrigem": "ck",
+      "conservacao": "EXCELENTE",
+      "numeroDeUsos": 1,
+      "tipo": "Camisa"
+    },
+    "parteDebaixo": {
+      "quantidadeDeLavagens": 0,
+      "estaEmprestado": false,
+      "id": "678cc0fb-7ee4-49e8-9cfd-8dfd240b7e8c",
+      "cor": "preta",
+      "tamanho": "40cm",
+      "lojaDeOrigem": "zara",
+      "conservacao": "EXCELENTE",
+      "numeroDeUsos": 2,
+      "tipo": "Calca"
+    },
+    "parteIntima": {
+      "quantidadeDeLavagens": 0,
+      "id": "fca671f7-5230-436d-a123-dd5e419b5540",
+      "cor": "blue",
+      "tamanho": "20cm",
+      "lojaDeOrigem": "ck",
+      "conservacao": "EXCELENTE",
+      "numeroDeUsos": 2,
+      "tipo": "Cueca"
+    },
+    "acessorios": [],
+    "numeroDeUsos": 1
+  },
+  {
+    "id": "d45842f2-bce5-441b-bf33-777bf613b587",
+    "parteDecima": {
+      "quantidadeDeLavagens": 1,
+      "estaEmprestado": false,
+      "id": "8dc4a73e-e971-47ff-808d-4e22a06ed70f",
+      "cor": "marrom",
+      "tamanho": "30cm",
+      "lojaDeOrigem": "zara",
+      "conservacao": "EXCELENTE",
+      "numeroDeUsos": 0,
+      "tipo": "Casaco"
+    },
+    "parteDebaixo": {
+      "quantidadeDeLavagens": 0,
+      "estaEmprestado": false,
+      "id": "678cc0fb-7ee4-49e8-9cfd-8dfd240b7e8c",
+      "cor": "preta",
+      "tamanho": "40cm",
+      "lojaDeOrigem": "zara",
+      "conservacao": "EXCELENTE",
+      "numeroDeUsos": 2,
+      "tipo": "Calca"
+    },
+    "parteIntima": {
+      "quantidadeDeLavagens": 0,
+      "id": "fca671f7-5230-436d-a123-dd5e419b5540",
+      "cor": "blue",
+      "tamanho": "20cm",
+      "lojaDeOrigem": "ck",
+      "conservacao": "EXCELENTE",
+      "numeroDeUsos": 2,
       "tipo": "Cueca"
     },
     "acessorios": [],

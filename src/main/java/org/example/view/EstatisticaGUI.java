@@ -9,6 +9,8 @@ import org.example.model.Look;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.List;
 
 public class EstatisticaGUI {
@@ -104,8 +106,8 @@ public class EstatisticaGUI {
     private void adicionarBotao(String texto,  Runnable acao) {
         JButton botao = new JButton(texto);
         botao.setFont(new Font("Arial", Font.PLAIN, 16));
-        botao.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent e) {
+        botao.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
                 try {
                     acao.run();
                 } catch (Exception ex) {

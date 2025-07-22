@@ -15,6 +15,22 @@ public class Casaco extends  Item implements ILavavel, IEmprestavel {
     private String dataEmprestimo;
     private String dataDevolucao;
 
+    @Override
+    public String toString() {
+        return "Casaco{" +
+                "quantidadeDeLavagens=" + quantidadeDeLavagens +
+                ", estaEmprestado=" + estaEmprestado +
+                ", dataEmprestimo='" + dataEmprestimo + '\'' +
+                ", dataDevolucao='" + dataDevolucao + '\'' +
+                ", id='" + id + '\'' +
+                ", cor='" + cor + '\'' +
+                ", tamanho='" + tamanho + '\'' +
+                ", lojaDeOrigem='" + lojaDeOrigem + '\'' +
+                ", conservacao=" + conservacao +
+                ", numeroDeUsos=" + numeroDeUsos +
+                '}';
+    }
+
     public Casaco(String cor, String tamanho, String lojaDeOrigem, Conservacao conservacao) {
         super(cor, tamanho, lojaDeOrigem, conservacao);
     }
