@@ -36,7 +36,7 @@ public class LookGUI {
         lblTitulo.setFont(new Font("Arial", Font.BOLD, 24));
         frame.add(lblTitulo, BorderLayout.NORTH);
 
-        panel = new JPanel(new GridLayout(6, 2, 20, 20));
+        panel = new JPanel(new GridLayout(6, 5, 20, 20));
         panel.setBorder(BorderFactory.createEmptyBorder(30, 200, 30, 200));
 
         adicionarBotoes();
@@ -134,10 +134,23 @@ public class LookGUI {
             }
         });
 
+        adicionarBotao("Voltar", new Runnable() {
+            @Override
+            public void run() {
+                voltar();
+            }
+        });
 
 
 
 
+
+    }
+
+    private void voltar(){
+        MenuGUI menuGUI=new MenuGUI();
+        menuGUI.show();
+        frame.dispose();
     }
 
     private void adicionarBotao(String texto, Runnable acao){

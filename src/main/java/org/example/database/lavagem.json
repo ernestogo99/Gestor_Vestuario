@@ -56,5 +56,21 @@
         "tipo": "Casaco"
       }
     ]
+  },
+  {
+    "id": "ea988d4a-7573-4a7e-8ba4-01105ad9531b",
+    "items": [
+      {
+        "quantidadeDeLavagens": 4,
+        "estaEmprestado": false,
+        "id": "103ef3d5-ba7a-4d6d-b864-3ee3ba5817f7",
+        "cor": "preto",
+        "tamanho": "30cm",
+        "lojaDeOrigem": "zara",
+        "conservacao": "EXCELENTE",
+        "numeroDeUsos": 0,
+        "tipo": "Camisa"
+      }
+    ]
   }
 ]

@@ -10,17 +10,6 @@
     "tipo": "Relogio"
   },
   {
-    "quantidadeDeLavagens": 0,
-    "estaEmprestado": false,
-    "id": "9abc93bd-b996-4bf1-9676-584b32a7b986",
-    "cor": "Preto",
-    "tamanho": "20CM",
-    "lojaDeOrigem": "ck",
-    "conservacao": "BOA",
-    "numeroDeUsos": 0,
-    "tipo": "Camisa"
-  },
-  {
     "quantidadeDeLavagens": 2,
     "estaEmprestado": false,
     "id": "15fabbf2-4130-4342-b461-3c8a90355099",
@@ -37,17 +26,6 @@
     "id": "a4657c32-7f05-47cf-b0e9-3d95ffca2d64",
     "cor": "preto",
     "tamanho": "40cm",
-    "lojaDeOrigem": "zara",
-    "conservacao": "EXCELENTE",
-    "numeroDeUsos": 0,
-    "tipo": "Camisa"
-  },
-  {
-    "quantidadeDeLavagens": 3,
-    "estaEmprestado": false,
-    "id": "103ef3d5-ba7a-4d6d-b864-3ee3ba5817f7",
-    "cor": "preto",
-    "tamanho": "30cm",
     "lojaDeOrigem": "zara",
     "conservacao": "EXCELENTE",
     "numeroDeUsos": 0,
@@ -138,5 +116,29 @@
     "conservacao": "EXCELENTE",
     "numeroDeUsos": 2,
     "tipo": "Calca"
+  },
+  {
+    "quantidadeDeLavagens": 0,
+    "dataEmprestimo": "2025-07-23",
+    "estaEmprestado": true,
+    "id": "9abc93bd-b996-4bf1-9676-584b32a7b986",
+    "cor": "Preto",
+    "tamanho": "20CM",
+    "lojaDeOrigem": "ck",
+    "conservacao": "BOA",
+    "numeroDeUsos": 0,
+    "tipo": "Camisa"
+  },
+  {
+    "quantidadeDeLavagens": 4,
+    "dataEmprestimo": "2025-07-24",
+    "estaEmprestado": true,
+    "id": "103ef3d5-ba7a-4d6d-b864-3ee3ba5817f7",
+    "cor": "preto",
+    "tamanho": "30cm",
+    "lojaDeOrigem": "zara",
+    "conservacao": "EXCELENTE",
+    "numeroDeUsos": 0,
+    "tipo": "Camisa"
   }
 ]
