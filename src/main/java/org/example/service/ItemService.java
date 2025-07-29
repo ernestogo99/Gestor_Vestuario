@@ -40,36 +40,16 @@ public class ItemService {
 
   public List<ILavavel> listarItensLavaveis() throws PersistenciaException{
         List<Item> itens=this.itemDAO.listar();
-        List<ILavavel> lavaveis=new ArrayList<ILavavel>();
-        for(Item item:itens){
-            if(item instanceof ILavavel){
-                lavaveis.add((ILavavel) item);
-            }
-        }
-        return lavaveis;
+        return itens.stream().filter(ILavavel.class::isInstance).map(ILavavel.class::cast).toList();
   }
 
-
-    public List<IEmprestavel> listarItensEmprestaveis() throws PersistenciaException{
+  public List<IEmprestavel> listarItensEmprestaveis() throws PersistenciaException{
         List<Item> itens=this.itemDAO.listar();
-        List<IEmprestavel> emprestaveis=new ArrayList<IEmprestavel>();
-        for(Item item:itens){
-            if(item instanceof IEmprestavel){
-                emprestaveis.add((IEmprestavel) item);
-            }
-        }
-        return emprestaveis;
+        return itens.stream().filter(IEmprestavel.class::isInstance).map(IEmprestavel.class::cast).toList();
     }
 
     public List<IEmprestavel> obterItensEmEmprestimo()throws PersistenciaException{
-        List<IEmprestavel> emprestaveis=this.listarItensEmprestaveis();
-        List<IEmprestavel> emprestados=new ArrayList<IEmprestavel>();
-        for(IEmprestavel item:emprestaveis){
-            if(item.isEstaEmprestado()){
-                emprestados.add(item);
-            }
-        }
-        return emprestados;
+        return this.listarItensEmprestaveis().stream().filter(IEmprestavel::isEstaEmprestado).toList();
     }
 
   public void excluir(String id) throws ItemNaoEncontradoException {
@@ -121,46 +101,22 @@ public class ItemService {
     }
 
     public List<Item> listarPartesDecima(){
-        List<Item> partesDecima=new ArrayList<>();
         List<Item> itens=this.listar();
-        for(Item item:itens){
-            if(item instanceof Camisa || item instanceof Casaco){
-                partesDecima.add(item);
-            }
-        }
-        return partesDecima;
+        return itens.stream().filter(item -> item instanceof Camisa || item instanceof Casaco).toList();
     }
 
     public List<Item> listarPartesDeBaixo(){
-        List<Item> partesDeBaixo=new ArrayList<>();
         List<Item> itens=this.listar();
-        for(Item item:itens){
-            if(item instanceof Calca || item instanceof Saia){
-                partesDeBaixo.add(item);
-            }
-        }
-        return partesDeBaixo;
+        return itens.stream().filter(item->item instanceof Calca || item instanceof Saia).toList();
     }
 
     public List<Item> listarPartesIntimas(){
-        List<Item> partesIntimas=new ArrayList<>();
         List<Item> itens=this.listar();
-        for(Item item:itens){
-            if(item instanceof Calcinha || item instanceof Cueca){
-                partesIntimas.add(item);
-            }
-        }
-        return partesIntimas;
+        return itens.stream().filter(item-> item instanceof Cueca || item instanceof Calcinha).toList();
     }
 
     public List<Acessorio> listarAcessorios(){
-        List<Acessorio>  acessorios=new ArrayList<>();
         List<Item> itens=this.listar();
-        for(Item item:itens){
-            if(item instanceof Acessorio){
-                acessorios.add((Acessorio) item);
-            }
-        }
-        return acessorios;
+        return itens.stream().filter(Acessorio.class::isInstance).map(Acessorio.class::cast).toList();
     }
 }

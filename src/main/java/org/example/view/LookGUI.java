@@ -49,102 +49,20 @@ public class LookGUI {
         frame.setVisible(true);
     }
 
-    private void adicionarBotoes(){
-        adicionarBotao("Criar look", new Runnable() {
-            @Override
-            public void run() {
-                criarLook();
-            }
-        });
-
-        adicionarBotao("Listar looks", new Runnable() {
-            @Override
-            public void run() {
-                listarLooks();
-            }
-        });
-
-        adicionarBotao("Remover look", new Runnable() {
-            @Override
-            public void run() {
-                removerLook();
-            }
-        });
-
-        adicionarBotao("Buscar look", new Runnable() {
-            @Override
-            public void run() {
-                buscarLook();
-            }
-        });
-
-        adicionarBotao("Registrar uso", new Runnable() {
-            @Override
-            public void run() {
-                registrarUso();
-            }
-        });
-
-        adicionarBotao("Adicionar acessório", new Runnable() {
-            @Override
-            public void run() {
-                adicionarAcessorioAoLook();
-            }
-        });
-
-        adicionarBotao("Remover acessório", new Runnable() {
-            @Override
-            public void run() {
-                removerAcessorioDoLook();
-            }
-        });
-
-        adicionarBotao("Trocar parte de cima", new Runnable() {
-            @Override
-            public void run() {
-                modificarParteDeCima();
-            }
-        });
-
-        adicionarBotao("Trocar parte de baixo", new Runnable() {
-            @Override
-            public void run() {
-                modificarParteDeBaixo();
-            }
-        });
-
-        adicionarBotao("Trocar parte intima", new Runnable() {
-            @Override
-            public void run() {
-                modificarParteIntima();
-            }
-        });
-
-        adicionarBotao("Trocar tudo", new Runnable() {
-            @Override
-            public void run() {
-                modificarLook();
-            }
-        });
-
-        adicionarBotao("Trocar partes de cima e de baixo", new Runnable() {
-            @Override
-            public void run() {
-                modificarLookCimaBaixo();
-            }
-        });
-
-        adicionarBotao("Voltar", new Runnable() {
-            @Override
-            public void run() {
-                voltar();
-            }
-        });
-
-
-
-
-
+    private void adicionarBotoes() {
+        adicionarBotao("Criar look", this::criarLook);
+        adicionarBotao("Listar looks", this::listarLooks);
+        adicionarBotao("Remover look", this::removerLook);
+        adicionarBotao("Buscar look", this::buscarLook);
+        adicionarBotao("Registrar uso", this::registrarUso);
+        adicionarBotao("Adicionar acessório", this::adicionarAcessorioAoLook);
+        adicionarBotao("Remover acessório", this::removerAcessorioDoLook);
+        adicionarBotao("Trocar parte de cima", this::modificarParteDeCima);
+        adicionarBotao("Trocar parte de baixo", this::modificarParteDeBaixo);
+        adicionarBotao("Trocar parte intima", this::modificarParteIntima);
+        adicionarBotao("Trocar tudo", this::modificarLook);
+        adicionarBotao("Trocar partes de cima e de baixo", this::modificarLookCimaBaixo);
+        adicionarBotao("Voltar", this::voltar);
     }
 
     private void voltar(){

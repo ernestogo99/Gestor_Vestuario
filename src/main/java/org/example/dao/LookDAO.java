@@ -65,12 +65,7 @@ public class LookDAO {
 
     public void salvarLook(Look look){
         List<Look> looks=this.listar();
-        for(Look look1:looks){
-            if(look1.getId().equals(look.getId())){
-                looks.remove(look1);
-                break;
-            }
-        }
+        looks.removeIf(l->l.getId().equals(look.getId()));
         looks.add(look);
         this.salvar(looks);
     }
@@ -82,25 +77,12 @@ public class LookDAO {
     }
 
     public Look obterLookPorId(String id) throws LookNaoEncontradoException{
-        List<Look> looks=this.listar();
-        for(Look look:looks){
-            if(look.getId().equals(id)){
-                return look;
-            }
-        }
-        throw  new LookNaoEncontradoException(id);
+        return this.listar().stream().filter(look -> look.getId().equals(id)).findFirst().orElseThrow(()->new LookNaoEncontradoException(id));
     }
 
     public void excluirLook(String id){
-        boolean removido=false;
         List<Look> looks=this.listar();
-        for(Look look:looks){
-            if(look.getId().equals(id)){
-                looks.remove(look);
-                removido=true;
-                break;
-            }
-        }
+        boolean removido=looks.removeIf(look -> look.getId().equals(id));
         if(!removido){
             throw  new LookNaoEncontradoException(id);
         }

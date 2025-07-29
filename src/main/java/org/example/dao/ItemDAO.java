@@ -48,12 +48,7 @@ public class ItemDAO {
 
     public void salvarItem(Item item){
         List<Item> items=this.listar();
-        for(Item item1:items){
-            if(item1.getId().equals(item.getId())){
-                items.remove(item1);
-                break;
-            }
-        }
+        items.removeIf(i->i.getId().equals(item.getId()));
         items.add(item);
         this.salvar(items);
     }
@@ -80,35 +75,18 @@ public class ItemDAO {
 
 
     public Item procurarPorId(String id){
-        List<Item> items=this.listar();
-        for(Item item:items){
-            if(item.getId().equals(id)){
-                return item;
-            }
-        }
-        throw  new ItemNaoEncontradoException(id);
+        return  this.listar().stream().filter(item -> item.getId().equals(id))
+                .findFirst().orElseThrow(()-> new ItemNaoEncontradoException(id));
     }
 
     public boolean existePorId(String id){
-        List<Item> items=this.listar();
-        for(Item item:items){
-            if(item.getId().equals(id)){
-                return true;
-            }
-        }
-        return false;
+        return this.listar().stream().anyMatch(item->item.getId().equals(id));
     }
 
     public void remover(String id){
-        boolean removido=false;
+
         List<Item> items=this.listar();
-        for(Item item:items){
-            if(item.getId().equals(id)){
-                items.remove(item);
-                removido=true;
-                break;
-            }
-        }
+        boolean removido=items.removeIf(item->item.getId().equals(id));
         if(!removido){
             throw  new ItemNaoEncontradoException(id);
         }

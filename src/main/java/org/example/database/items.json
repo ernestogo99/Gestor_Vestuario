@@ -10,28 +10,6 @@
     "tipo": "Relogio"
   },
   {
-    "quantidadeDeLavagens": 2,
-    "estaEmprestado": false,
-    "id": "15fabbf2-4130-4342-b461-3c8a90355099",
-    "cor": "",
-    "tamanho": "",
-    "lojaDeOrigem": "",
-    "conservacao": "EXCELENTE",
-    "numeroDeUsos": 0,
-    "tipo": "Camisa"
-  },
-  {
-    "quantidadeDeLavagens": 3,
-    "estaEmprestado": false,
-    "id": "a4657c32-7f05-47cf-b0e9-3d95ffca2d64",
-    "cor": "preto",
-    "tamanho": "40cm",
-    "lojaDeOrigem": "zara",
-    "conservacao": "EXCELENTE",
-    "numeroDeUsos": 0,
-    "tipo": "Camisa"
-  },
-  {
     "quantidadeDeLavagens": 0,
     "estaEmprestado": false,
     "id": "608f3408-3ebc-4221-a0d5-be50429e5e14",
@@ -96,17 +74,6 @@
     "tipo": "Cueca"
   },
   {
-    "quantidadeDeLavagens": 1,
-    "estaEmprestado": false,
-    "id": "8dc4a73e-e971-47ff-808d-4e22a06ed70f",
-    "cor": "marrom",
-    "tamanho": "30cm",
-    "lojaDeOrigem": "zara",
-    "conservacao": "EXCELENTE",
-    "numeroDeUsos": 0,
-    "tipo": "Casaco"
-  },
-  {
     "quantidadeDeLavagens": 0,
     "estaEmprestado": false,
     "id": "678cc0fb-7ee4-49e8-9cfd-8dfd240b7e8c",
@@ -131,8 +98,18 @@
   },
   {
     "quantidadeDeLavagens": 4,
-    "dataEmprestimo": "2025-07-24",
-    "estaEmprestado": true,
+    "estaEmprestado": false,
+    "id": "a4657c32-7f05-47cf-b0e9-3d95ffca2d64",
+    "cor": "preto",
+    "tamanho": "40cm",
+    "lojaDeOrigem": "zara",
+    "conservacao": "EXCELENTE",
+    "numeroDeUsos": 0,
+    "tipo": "Camisa"
+  },
+  {
+    "quantidadeDeLavagens": 4,
+    "estaEmprestado": false,
     "id": "103ef3d5-ba7a-4d6d-b864-3ee3ba5817f7",
     "cor": "preto",
     "tamanho": "30cm",
@@ -140,5 +117,16 @@
     "conservacao": "EXCELENTE",
     "numeroDeUsos": 0,
     "tipo": "Camisa"
+  },
+  {
+    "quantidadeDeLavagens": 2,
+    "estaEmprestado": false,
+    "id": "8dc4a73e-e971-47ff-808d-4e22a06ed70f",
+    "cor": "marrom",
+    "tamanho": "30cm",
+    "lojaDeOrigem": "zara",
+    "conservacao": "EXCELENTE",
+    "numeroDeUsos": 0,
+    "tipo": "Casaco"
   }
 ]

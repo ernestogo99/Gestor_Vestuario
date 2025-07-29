@@ -46,67 +46,17 @@ public class ItemGUI {
     }
 
     private void adicionarBotoes() {
-        adicionarBotao("Criar Item", new Runnable() {
-            public void run() {
-                criarItem();
-            }
-        });
-
-        adicionarBotao("Listar Itens", new Runnable() {
-            public void run() {
-                listarItens();
-            }
-        });
-
-        adicionarBotao("Buscar Item por ID", new Runnable() {
-            public void run() {
-                buscarItem();
-            }
-        });
-
-        adicionarBotao("Editar Item", new Runnable() {
-            public void run() {
-                editarItem();
-            }
-        });
-
-        adicionarBotao("Remover Item", new Runnable() {
-            public void run() {
-                removerItem();
-            }
-        });
-
-        adicionarBotao("Ver Quantidade de Itens", new Runnable() {
-            public void run() {
-                verQuantidadeItens();
-            }
-        });
-
-        adicionarBotao("Registrar Empréstimo", new Runnable() {
-            public void run() {
-                registrarEmprestimo();
-            }
-        });
-
-        adicionarBotao("Registrar Devolução", new Runnable() {
-            public void run() {
-                registrarDevolucao();
-            }
-        });
-
-        adicionarBotao("Dias desde Empréstimo", new Runnable() {
-            public void run() {
-                diasDesdeEmprestimo();
-            }
-        });
-
-        adicionarBotao("Voltar", new Runnable() {
-            public void run() {
-                voltar();
-            }
-        });
+        adicionarBotao("Criar Item", this::criarItem);
+        adicionarBotao("Listar Itens", this::listarItens);
+        adicionarBotao("Buscar Item por ID", this::buscarItem);
+        adicionarBotao("Editar Item", this::editarItem);
+        adicionarBotao("Remover Item", this::removerItem);
+        adicionarBotao("Ver Quantidade de Itens", this::verQuantidadeItens);
+        adicionarBotao("Registrar Empréstimo", this::registrarEmprestimo);
+        adicionarBotao("Registrar Devolução", this::registrarDevolucao);
+        adicionarBotao("Dias desde Empréstimo", this::diasDesdeEmprestimo);
+        adicionarBotao("Voltar", this::voltar);
     }
-
 
     private void adicionarBotao(String texto,  Runnable acao) {
         JButton botao = new JButton(texto);

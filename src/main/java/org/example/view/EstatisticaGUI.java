@@ -47,60 +47,15 @@ public class EstatisticaGUI {
 
 
     private void adicionarBotoes() {
-        adicionarBotao("Ver itens mais usados", new Runnable() {
-            public void run() {
-               listarItensMaisUsados();
-            }
-        });
-
-        adicionarBotao("Ver itens menos usados", new Runnable() {
-            public void run() {
-                listarItensMenosUsados();
-            }
-        });
-
-        adicionarBotao("Ver itens mais lavados", new Runnable() {
-            public void run() {
-                listarItensMaisLavados();
-            }
-        });
-
-        adicionarBotao("Ver itens menos lavados", new Runnable() {
-            public void run() {
-                listarItensMenosLavados();
-            }
-        });
-
-        adicionarBotao("Ver looks mais usados", new Runnable() {
-            public void run() {
-                listarLooksMaisUsados();
-            }
-        });
-
-        adicionarBotao("Ver itens emprestados", new Runnable() {
-            public void run() {
-                listarItensEmprestados();
-            }
-        });
-
-        adicionarBotao("Ver qtd de utilizações de um item", new Runnable() {
-            public void run() {
-                verQTDdeUtilizacoesDoItem();
-            }
-        });
-
-        adicionarBotao("Ver qtd de utilizações de um look", new Runnable() {
-            public void run() {
-                verQTDdeUtilizacoesDoLook();
-            }
-        });
-
-
-        adicionarBotao("Voltar", new Runnable() {
-            public void run() {
-                voltar();
-            }
-        });
+        adicionarBotao("Ver itens mais usados", this::listarItensMaisUsados);
+        adicionarBotao("Ver itens menos usados", this::listarItensMenosUsados);
+        adicionarBotao("Ver itens mais lavados", this::listarItensMaisLavados);
+        adicionarBotao("Ver itens menos lavados", this::listarItensMenosLavados);
+        adicionarBotao("Ver looks mais usados", this::listarLooksMaisUsados);
+        adicionarBotao("Ver itens emprestados", this::listarItensEmprestados);
+        adicionarBotao("Ver qtd de utilizações de um item", this::verQTDdeUtilizacoesDoItem);
+        adicionarBotao("Ver qtd de utilizações de um look", this::verQTDdeUtilizacoesDoLook);
+        adicionarBotao("Voltar", this::voltar);
     }
 
     private void adicionarBotao(String texto,  Runnable acao) {

@@ -51,56 +51,14 @@ public class LavagemGUI {
     }
 
     private void adicionarBotoes() {
-        adicionarBotao("Criar Lavagem", new Runnable() {
-            @Override
-            public void run() {
-                criarLavagem();
-            }
-        });
-
-        adicionarBotao("Listar Lavagens", new Runnable() {
-            @Override
-            public void run() {
-                listarLavagens();
-            }
-        });
-
-        adicionarBotao("Buscar Lavagem por ID", new Runnable() {
-            @Override
-            public void run() {
-                buscarLavagem();
-            }
-        });
-
-        adicionarBotao("Adicionar Item à Lavagem", new Runnable() {
-            @Override
-            public void run() {
-                adicionarItemNaLavagem();
-            }
-        });
-
-        adicionarBotao("Registrar Lavagem", new Runnable() {
-            @Override
-            public void run() {
-                registrarLavagem();
-            }
-        });
-
-        adicionarBotao("Remover Item da Lavagem", new Runnable() {
-            @Override
-            public void run() {
-                removerItemDaLavagem();
-            }
-        });
-
-        adicionarBotao("Voltar", new Runnable() {
-            @Override
-            public void run() {
-                voltar();
-            }
-        });
+        adicionarBotao("Criar Lavagem", this::criarLavagem);
+        adicionarBotao("Listar Lavagens", this::listarLavagens);
+        adicionarBotao("Buscar Lavagem por ID", this::buscarLavagem);
+        adicionarBotao("Adicionar Item à Lavagem", this::adicionarItemNaLavagem);
+        adicionarBotao("Registrar Lavagem", this::registrarLavagem);
+        adicionarBotao("Remover Item da Lavagem", this::removerItemDaLavagem);
+        adicionarBotao("Voltar", this::voltar);
     }
-
 
     private void adicionarBotao(String texto,  Runnable acao) {
         JButton botao = new JButton(texto);

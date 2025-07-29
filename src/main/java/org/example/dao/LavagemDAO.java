@@ -17,6 +17,7 @@ import java.io.*;
 import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 public class LavagemDAO {
     private String nomeArquivo;
@@ -45,12 +46,7 @@ public class LavagemDAO {
 
     public void salvarLavagem(Lavagem lavagem){
        List<Lavagem> lavagems=this.listar();
-       for(Lavagem lavagem1:lavagems){
-           if(lavagem1.getId().equals(lavagem.getId())){
-               lavagems.remove(lavagem1);
-               break;
-           }
-       }
+       lavagems.removeIf(lavagem1 -> lavagem1.getId().equals(lavagem.getId()));
        lavagems.add(lavagem);
        this.salvar(lavagems);
     }
@@ -75,13 +71,10 @@ public class LavagemDAO {
         this.salvar(lavagems);
     }
 
-    public Lavagem obterLavagemPorId(String id){
-        List<Lavagem> lavagems=this.listar();
-        for(Lavagem lavagem:lavagems){
-            if(lavagem.getId().equals(id)){
-                return lavagem;
-            }
-        }
-        throw new LavagemNaoEncontradaException(id);
+    public Lavagem obterLavagemPorId(String id) {
+        return this.listar().stream().filter(l -> l.getId().equals(id)).findFirst().orElseThrow(() -> new LavagemNaoEncontradaException(id));
     }
+
 }
+
+

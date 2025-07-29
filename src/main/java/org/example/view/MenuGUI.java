@@ -47,54 +47,41 @@
             panel.add(btnEstatisticas);
             panel.add(btnSair);
 
-            btnItens.addActionListener(new ActionListener() {
-                @Override
-                public void actionPerformed(ActionEvent e) {
-                    ItemGUI itemGUI = new ItemGUI();
-                    itemGUI.show();
-                    frame.dispose();
-                }
-            });
+            addActionListeners();
 
-            btnEstatisticas.addActionListener(new ActionListener() {
-                @Override
-                public void actionPerformed(ActionEvent e) {
-                    EstatisticaGUI estatisticaGUI = new EstatisticaGUI();
-                    estatisticaGUI.show();
-                    frame.dispose();
-                }
-            });
 
-            btnLavagens.addActionListener(new ActionListener() {
-                @Override
-                public void actionPerformed(ActionEvent e) {
-                    LavagemGUI lavagemGUI= new LavagemGUI();
-                    lavagemGUI.show();
-                    frame.dispose();
-                }
-            });
 
             frame.add(panel);
 
-            btnLooks.addActionListener(new ActionListener() {
-                @Override
-                public void actionPerformed(ActionEvent e) {
-                    LookGUI lookGUI=new LookGUI();
-                    lookGUI.show();
-                    frame.dispose();
-                }
-            });
-
-            btnSair.addActionListener(new ActionListener() {
-                @Override
-                public void actionPerformed(ActionEvent e) {
-                    frame.dispose();
-                }
-            });
 
         }
 
         public void show(){
             frame.setVisible(true);
         }
+
+        private void addActionListeners() {
+            btnItens.addActionListener(e -> {
+                new ItemGUI().show();
+                frame.dispose();
+            });
+
+            btnLooks.addActionListener(e -> {
+                new LookGUI().show();
+                frame.dispose();
+            });
+
+            btnLavagens.addActionListener(e -> {
+                new LavagemGUI().show();
+                frame.dispose();
+            });
+
+            btnEstatisticas.addActionListener(e -> {
+                new EstatisticaGUI().show();
+                frame.dispose();
+            });
+
+            btnSair.addActionListener(e -> frame.dispose());
+        }
+
     }
