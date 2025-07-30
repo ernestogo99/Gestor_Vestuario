@@ -15,6 +15,7 @@ public class ItemGUI {
     private JLabel lblTitulo;
     private ItemController controller;
 
+
     public ItemGUI() {
         this.controller = new ItemController();
         initialize();
@@ -46,7 +47,7 @@ public class ItemGUI {
     }
 
     private void adicionarBotoes() {
-        adicionarBotao("Criar Item", this::criarItem);
+        adicionarBotao("Criar Item", this::createItem);
         adicionarBotao("Listar Itens", this::listarItens);
         adicionarBotao("Buscar Item por ID", this::buscarItem);
         adicionarBotao("Editar Item", this::editarItem);
@@ -80,28 +81,65 @@ public class ItemGUI {
         menu.show();
     }
 
-    private void criarItem() {
-        try {
-            String[] tipos = {"Camisa", "Calça","Calcinha","Casaco","Cueca","Pulseira","Relogio","Saia"};
-            String tipoSelecionado = (String) JOptionPane.showInputDialog(
-                    frame,
-                    "Escolha o tipo de item:",
-                    "Tipo de Item",
-                    JOptionPane.QUESTION_MESSAGE,
-                    null,
-                    tipos,
-                    tipos[0]
-            );
 
-            Item novoItem = ItemFactory.criarItem(tipoSelecionado);
-            if (novoItem != null) {
-                controller.criarItem(novoItem);
-                JOptionPane.showMessageDialog(frame, tipoSelecionado + " criada com sucesso!");
+
+
+    private void createItem() {
+        try {
+            String[] tipos = {"Camisa", "Calça", "Calcinha", "Casaco", "Cueca", "Pulseira", "Relogio", "Saia"};
+            JPanel painel = new JPanel(new GridLayout(0, 2, 10, 10));
+            painel.setBorder(BorderFactory.createEmptyBorder(30, 200, 30, 200));
+
+            painel.add(new JLabel("Selecione o tipo de item"));
+            JComboBox<String> boxTypes = new JComboBox<>(tipos);
+            painel.add(boxTypes);
+
+            painel.add(new JLabel("Digite a cor do item"));
+            JTextField colorTextField = new JTextField();
+            painel.add(colorTextField);
+
+            painel.add(new JLabel("Digite o tamanho do item"));
+            JTextField lengthTextField = new JTextField();
+            painel.add(lengthTextField);
+
+            painel.add(new JLabel("Digite a loja do item"));
+            JTextField shopTextField = new JTextField();
+            painel.add(shopTextField);
+
+            painel.add(new JLabel("Selecione a conservação do item"));
+            JComboBox<Conservacao> conservacaoBox = new JComboBox<>(Conservacao.values());
+            painel.add(conservacaoBox);
+
+            int result = JOptionPane.showConfirmDialog(frame, painel, "Criar Item",
+                    JOptionPane.OK_CANCEL_OPTION, JOptionPane.PLAIN_MESSAGE);
+
+            if (result == JOptionPane.OK_OPTION) {
+                String tipo = (String) boxTypes.getSelectedItem();
+                String cor = colorTextField.getText().trim();
+                String tamanho = lengthTextField.getText().trim();
+                String loja = shopTextField.getText().trim();
+                Conservacao conservacao = (Conservacao) conservacaoBox.getSelectedItem();
+
+
+                if (cor.isEmpty() || tamanho.isEmpty() || loja.isEmpty() || tipo == null || conservacao == null) {
+                    JOptionPane.showMessageDialog(frame, "Todos os campos devem ser preenchidos.",
+                            "Campos obrigatórios", JOptionPane.WARNING_MESSAGE);
+                    return;
+                }
+
+
+                Item novoItem = ItemFactory.criarItem(tipo, cor, tamanho, loja, conservacao);
+                if (novoItem != null) {
+                    controller.criarItem(novoItem);
+                    JOptionPane.showMessageDialog(frame, tipo + " criada com sucesso!");
+                }
             }
-        } catch (Exception ex) {
-            JOptionPane.showMessageDialog(frame, "Erro: " + ex.getMessage(), "Erro", JOptionPane.ERROR_MESSAGE);
+
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(frame, "Erro: " + e.getMessage(), "Erro", JOptionPane.ERROR_MESSAGE);
         }
     }
+
 
 
     private void buscarItem() {
@@ -178,27 +216,60 @@ public class ItemGUI {
 
     private void editarItem() {
         try {
-            String id = JOptionPane.showInputDialog(frame, "ID do item a editar:");
-            String cor = JOptionPane.showInputDialog(frame, "Nova cor:");
-            String tamanho = JOptionPane.showInputDialog(frame, "Novo tamanho:");
-            String loja = JOptionPane.showInputDialog(frame, "Nova loja de origem:");
+            String id = JOptionPane.showInputDialog(frame, "Digite o ID do item a editar:");
+            if (id == null || id.trim().isEmpty()) {
+                JOptionPane.showMessageDialog(frame, "ID não pode ser vazio.");
+                return;
+            }
 
-            Conservacao conservacao = (Conservacao) JOptionPane.showInputDialog(
-                    frame,
-                    "Nova conservação:",
-                    "Escolha",
-                    JOptionPane.QUESTION_MESSAGE,
-                    null,
-                    Conservacao.values(),
-                    Conservacao.BOA
-            );
+            Item item = controller.buscarItem(id);
+            if (item == null) {
+                JOptionPane.showMessageDialog(frame, "Item não encontrado para o ID: " + id);
+                return;
+            }
 
-            controller.editarItem(id, cor, tamanho, loja, conservacao);
-            JOptionPane.showMessageDialog(frame, "Item editado com sucesso!");
+            JPanel painel = new JPanel(new GridLayout(0, 2, 10, 10));
+            painel.setBorder(BorderFactory.createEmptyBorder(30, 200, 30, 200));
+
+
+            painel.add(new JLabel("Cor:"));
+            JTextField colorTextField = new JTextField(item.getCor());
+            painel.add(colorTextField);
+
+            painel.add(new JLabel("Tamanho:"));
+            JTextField tamanhoTextField = new JTextField(item.getTamanho());
+            painel.add(tamanhoTextField);
+
+            painel.add(new JLabel("Loja:"));
+            JTextField lojaTextField = new JTextField(item.getLojaDeOrigem());
+            painel.add(lojaTextField);
+
+            painel.add(new JLabel("Conservação:"));
+            JComboBox<Conservacao> box = new JComboBox<>(Conservacao.values());
+            box.setSelectedItem(item.getConservacao());
+            painel.add(box);
+
+            int result = JOptionPane.showConfirmDialog(frame, painel, "Editar Item", JOptionPane.OK_CANCEL_OPTION, JOptionPane.PLAIN_MESSAGE);
+            if (result == JOptionPane.OK_OPTION) {
+                String novaCor = colorTextField.getText().trim();
+                String novoTamanho = tamanhoTextField.getText().trim();
+                String novaLoja = lojaTextField.getText().trim();
+                Conservacao novaConservacao = (Conservacao) box.getSelectedItem();
+
+                if (novaCor.isEmpty() || novoTamanho.isEmpty() || novaLoja.isEmpty()) {
+                    JOptionPane.showMessageDialog(frame, "Todos os campos devem ser preenchidos.");
+                    return;
+                }
+
+                controller.editarItem(id, novaCor, novoTamanho, novaLoja, novaConservacao);
+                JOptionPane.showMessageDialog(frame, "Item editado com sucesso!");
+            }
+
         } catch (Exception ex) {
             JOptionPane.showMessageDialog(frame, "Erro ao editar item: " + ex.getMessage(), "Erro", JOptionPane.ERROR_MESSAGE);
         }
     }
+
 
 
     private void removerItem() {

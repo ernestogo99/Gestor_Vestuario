@@ -6,20 +6,7 @@ import org.example.model.*;
 import javax.swing.*;
 
 public class ItemFactory {
-    public static Item criarItem(String tipo) {
-        String cor = JOptionPane.showInputDialog("Cor:");
-        String tamanho = JOptionPane.showInputDialog("Tamanho:");
-        String loja = JOptionPane.showInputDialog("Loja de Origem:");
-
-        Conservacao conservacao = (Conservacao) JOptionPane.showInputDialog(
-                null,
-                "Conservação:",
-                "Escolha",
-                JOptionPane.QUESTION_MESSAGE,
-                null,
-                Conservacao.values(),
-                Conservacao.EXCELENTE
-        );
+    public static Item criarItem(String tipo,String cor,String tamanho,String loja, Conservacao conservacao) {
 
         if (tipo.equals("Camisa")) {
             return new Camisa(cor, tamanho, loja, conservacao);

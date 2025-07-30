@@ -128,5 +128,27 @@
     "conservacao": "EXCELENTE",
     "numeroDeUsos": 0,
     "tipo": "Casaco"
+  },
+  {
+    "quantidadeDeLavagens": 0,
+    "estaEmprestado": false,
+    "id": "18ac023b-b978-4e10-a543-c67d9d858763",
+    "cor": "Azul",
+    "tamanho": "20cm",
+    "lojaDeOrigem": "calvin klein",
+    "conservacao": "EXCELENTE",
+    "numeroDeUsos": 0,
+    "tipo": "Camisa"
+  },
+  {
+    "quantidadeDeLavagens": 0,
+    "estaEmprestado": false,
+    "id": "3bd85da1-da8a-464c-9be8-7fad327d163f",
+    "cor": "azul",
+    "tamanho": "40cm",
+    "lojaDeOrigem": "renner",
+    "conservacao": "EXCELENTE",
+    "numeroDeUsos": 0,
+    "tipo": "Camisa"
   }
 ]
